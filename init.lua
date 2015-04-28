@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------
--- @author Uli Schlachter
+-- @author Ivan Balashov
+-- @original author Uli Schlachter
 -- @copyright 2010 Uli Schlachter
--- @release v3.5.6
+-- @copyright 2015 Ivan Balashov
 ---------------------------------------------------------------------------
 
 local wbase = require("wibox.widget.base")
