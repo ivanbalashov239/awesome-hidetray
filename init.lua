@@ -27,7 +27,6 @@ systray.table = {}
 
 function systray:plus(number)
     systray.number = systray.number + number
-    --print(systray.number)
     if systray.textbox then
         systray.textbox:set_text(systray.number)
     end
@@ -37,7 +36,6 @@ function systray:attachtext(textbox)
 end
 
 function systray:draw(wibox, cr, width, height)
-    --print("systray:draw".." "..width.." "..height)
     if height ~= 18 then
         systray:plus((width - systray.width)/height)
         systray.width = width
@@ -100,18 +98,8 @@ function systray:new(revers)
 
     return ret
 end
---local function print(s)
---naughty.notify({ preset = naughty.config.presets.critical,
-                     --title = s,
-		     --bg = beautiful.bg_normal,
-                     --text = awesome.startup_errors,
-		     --position = "top_left",
-                     --timeout = 5,
-	     --}) 
-     --end
 
 function systray:show(s)
-    --print("show")
     systray.hidetimer:stop()
     for i,k in pairs(systray.table) do
         if not i == s then
@@ -123,7 +111,6 @@ function systray:show(s)
     end
 end
 function systray:hide(s)
-    --print("hide")
     systray.traybufer:set_widget(systray.tray)
     systray.table[s]:reset()
 end
@@ -133,7 +120,6 @@ function systray:attach(args)
     local wib = args.wibox
     local revers = args.revers
     local s = args.screen or 1
-    --print("screen"..s)
     if wib then
         wib:connect_signal('mouse::enter', function () 
             systray:show(s)
