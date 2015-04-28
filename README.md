@@ -1,5 +1,5 @@
 # Hide systray
-# You can show tray only when your panel under the mouse
+# You can show tray when your panel under the mouse
 
 	tray = hidetray({revers = true})
 	hidetray:show(1)
@@ -10,7 +10,7 @@
     		right_layout:add(tray[s])
 	end
 
-# Or you can make shortcut to show tray for timeout like after systray::update
+# And you can make shortcut to show tray for timeout like after systray::update
 	
 	
     awful.key({ modkey,           }, "/",      function () 
